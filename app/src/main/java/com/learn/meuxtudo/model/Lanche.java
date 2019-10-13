@@ -19,6 +19,47 @@ public class Lanche {
     @JsonProperty("image")
     private String image;
 
+    public Lanche(){}
+
+    public Lanche(Integer id, String name, List<Integer> ingredients, String image) {
+        this.id = id;
+        this.name = name;
+        this.ingredients = ingredients;
+        this.image = image;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Integer> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<Integer> ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
     public Map<String, Double> getIngredientsName(){
         return new HashMap<String, Double>() {
             {
@@ -32,43 +73,8 @@ public class Lanche {
         };
     }
 
-    @JsonProperty("id")
-    public Integer getId() {
-        return id;
-    }
-
-    @JsonProperty("id")
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    @JsonProperty("name")
-    public String getName() {
-        return name;
-    }
-
-    @JsonProperty("name")
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @JsonProperty("ingredients")
-    public List<Integer> getIngredients() {
-        return ingredients;
-    }
-
-    @JsonProperty("ingredients")
-    public void setIngredients(List<Integer> ingredients) {
-        this.ingredients = ingredients;
-    }
-
-    @JsonProperty("image")
-    public String getImage() {
-        return image;
-    }
-
-    @JsonProperty("image")
-    public void setImage(String image) {
-        this.image = image;
+    public String toString(){
+        return this.getId() + " "
+                + this.getName();
     }
 }
